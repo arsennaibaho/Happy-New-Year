@@ -12,7 +12,7 @@ const SpecialMessage: React.FC<SpecialMessageProps> = ({ onContinue, onBack }) =
       {/* Back Button */}
       <button 
         onClick={onBack}
-        className="absolute top-6 left-6 z-20 flex items-center gap-2 text-white/80 hover:text-white transition-colors font-medium"
+        className="absolute top-6 left-6 z-20 flex items-center gap-2 text-white/80 hover:text-white transition-all transform hover:scale-105 active:scale-95 font-medium bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm"
       >
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -20,8 +20,8 @@ const SpecialMessage: React.FC<SpecialMessageProps> = ({ onContinue, onBack }) =
         Kembali
       </button>
 
-      <div className="z-10 flex flex-col items-center max-w-4xl mt-12">
-        <h2 className="text-4xl md:text-7xl font-serif font-bold text-white mb-6 drop-shadow-lg italic leading-tight">
+      <div className="z-10 flex flex-col items-center max-w-4xl mt-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
+        <h2 className="text-3xl md:text-6xl font-serif font-bold text-white mb-6 drop-shadow-lg italic leading-tight px-4">
           Happy New Year Cintaku
         </h2>
         
