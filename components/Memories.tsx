@@ -43,7 +43,7 @@ const Memories: React.FC<MemoriesProps> = ({ onContinue, onBack }) => {
         </div>
 
         <h2 className="text-5xl md:text-7xl font-serif font-bold text-rose-800 mb-6 drop-shadow-sm tracking-tight">
-          Kita Tahun 2024 Ini
+          Kita Tahun 2025 Ini
         </h2>
         
         <p className="text-rose-700/80 text-lg md:text-xl font-medium tracking-wide mb-16 leading-relaxed max-w-md">

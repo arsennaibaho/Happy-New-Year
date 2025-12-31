@@ -3,7 +3,13 @@ import { GoogleGenAI, Type } from "@google/genai";
 import { CardData, GeneratedContent } from "../types";
 
 export const generateCardContent = async (data: CardData): Promise<GeneratedContent> => {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const apiKey = process.env.API_KEY;
+  
+  if (!apiKey) {
+    throw new Error("API_KEY tidak ditemukan. Harap atur variabel lingkungan di dashboard Vercel.");
+  }
+
+  const ai = new GoogleGenAI({ apiKey });
   
   const prompt = `Buatkan konten kartu ucapan yang indah dalam Bahasa Indonesia.
   Penerima: ${data.recipient}
@@ -44,5 +50,8 @@ export const generateCardContent = async (data: CardData): Promise<GeneratedCont
     }
   });
 
-  return JSON.parse(response.text);
+  const text = response.text;
+  if (!text) throw new Error("Respon AI kosong");
+  
+  return JSON.parse(text);
 };
